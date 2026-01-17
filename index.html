@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualização de Streaming</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="mapa-redes.html">Mapa de Redes</a>
+    </nav>
+
+    <h1>Visualização dos Serviços de Streaming</h1>
+
+    <div class="container-intro">
+      <h2> 1. Introdução </h2>
+      <p> O projeto usa como base os dados contidos em três datasets: </p>
+      <ul>
+        <li><a href="https://www.kaggle.com/datasets/shivamb/amazon-prime-movies-and-tv-shows" target="_blank">Amazon Prime Movies and TV Shows</a></li>
+        <li><a href="https://www.kaggle.com/datasets/shivamb/disney-movies-and-tv-shows" target="_blank">Disney+ Movies and TV Shows</a></li>
+        <li><a href="https://www.kaggle.com/datasets/shivamb/netflix-shows" target="_blank">Netflix Movies and TV Shows</a></li>
+      </ul>
+
+      <p> 
+        A partir desses dados, apresentaremos uma série de visualizações que permitem 
+        analisar e comparar características do conteúdo oferecido por cada serviço de streaming. O objetivo é fornecer uma 
+        visão ampla e comparativa sobre o comportamento e perfil dos conteúdos das três plataformas,
+        identificando similaridades, diferenças e potenciais padrões na oferta de entretenimento digital. 
+      </p>
+      <img src="streaming.jpg" alt="" height ="300" width ="600">
+    </div>
+
+    <div class="container-intro">
+      <h2> 2. Visão Geral dos Dados </h2>
+      <p> 
+        O dataset contém no total 21.792 títulos, sendo 41% do Prime Video, 17% do Disney+ e 42% da Netflix, divididos entre filmes, séries e programas de TV. 
+        Cada título apresenta informações como data de lançamento, classificação indicativa, duração, gênero e métricas de desempenho.
+      </p>
+      <iframe width="100%" height="420" frameborder="0"
+        src="https://observablehq.com/embed/fae7590da1d7d835@936?cells=imagem1"></iframe>
+
+      <p> 
+        Em relação à avaliação dos títulos, o dataset utiliza métricas do 
+        <a href="https://en.wikipedia.org/wiki/IMDb" target="_blank">IMDb</a> e do 
+        <a href="https://pt.wikipedia.org/wiki/The_Movie_Database" target="_blank">TMDB</a>, 
+        pilares globais de metadados da indústria audiovisual.
+      </p>
+
+      <ul>
+        <li>
+          <strong>IMDb Score:</strong> Reflete uma média ponderada (0 a 10) onde o algoritmo da Amazon
+          prioriza usuários ativos para reduzir distorções. É complementado pelo <em>IMDb Votes</em>,
+          que indica o volume de avaliações e a confiabilidade estatística do dado.
+        </li>
+        <li>
+          <strong>TMDB Score:</strong> Baseia-se na avaliação média de uma comunidade colaborativa e tecnologicamente engajada.
+        </li>
+        <li>
+          <strong>TMDB Popularity:</strong> Diferencia-se por medir o engajamento recente, considerando acessos,
+          buscas e interações diárias, sendo ideal para identificar tendências atuais de consumo.
+        </li>
+      </ul>
+
+      <p>
+      O <strong>Scatterplot</strong> (Gráfico de Dispersão) apresenta a relação entre as notas do IMDb e do TMDB.
+      Esta visualização é utilizada para verificar o grau de concordância entre
+      as avaliações do público geral e da comunidade do TMDB, permitindo identificar correlações, discrepâncias e padrões entre as duas métricas.
+    </p>
+
+    <iframe width="100%" height="540" frameborder="0"
+    src="https://observablehq.com/embed/fae7590da1d7d835@937?cells=scatter"></iframe>
+
+    <p>
+      Para aprofundar a análise estatística das notas do <strong>IMDb</strong>, utilizamos o <strong>Boxplot</strong> (Gráfico de Caixa).
+      Esta visualização foca exclusivamente na distribuição das notas da plataforma, permitindo identificar a mediana das avaliações,
+      a concentração dos dados nos quartis centrais e, principalmente, a presença de <em>outliers</em> — títulos que
+      receberam notas muito distantes da média geral do catálogo, seja por uma aclamação excepcional ou por uma rejeição severa do público.
+    </p>
+
+    <iframe width="100%" height="585" frameborder="0"
+      src="https://observablehq.com/embed/fae7590da1d7d835@940?cells=imdbchart"></iframe>
+
+  </div>
+
+    <div class="container-intro">
+    <h2> 2. Distribuição Geográfica </h2>
+    <p>
+      A análise espacial dos dados revela que a distribuição geográfica dos três serviços de streaming apresenta
+      um padrão massivamente concentrado nos <strong>Estados Unidos</strong>.
+      Esse domínio reflete a origem das plataformas e o peso histórico de Hollywood na indústria audiovisual global.
+    </p>
+
+    <p>
+      Apesar dessa semelhança estrutural, observamos nuances importantes na
+      diversificação de catálogos. O <strong>Prime Video</strong> e a <strong>Netflix</strong>
+      demonstram uma estratégia de expansão internacional mais agressiva, com uma presença significativa de produções estrangeiras.
+      Um destaque notável é a <strong>Índia</strong>, que surge como o segundo maior polo de conteúdo nessas duas plataformas, evidenciando
+      o investimento em mercados de exportação cultural de massa (como Bollywood).
+    </p>
+
+    <p>
+      Em contrapartida, a <strong>Disney+</strong> apresenta uma menor representatividade de títulos produzidos
+      fora do eixo norte-americano, especialmente no mercado indiano. Essa diferença pode ser atribuída ao foco da
+      plataforma em franquias globais proprietárias, que tendem a centralizar sua produção nos Estados Unidos em comparação
+      ao modelo de licenciamento e produção local mais diversificado de seus concorrentes.
+    </p>
+
+    <iframe width="100%" height="320" frameborder="0"
+      src="https://observablehq.com/embed/46cdd470e20274e9?cells=allMaps"></iframe>
+    
+  </div>
+    <div class="container-intro">
+    <h2> 3. Métricas Gerais</h2>
+
+    <p>
+      A análise das bibliotecas revela que <strong>Drama, Comédia e Ação</strong> são os pilares dos três serviços,
+      liderando o volume de títulos. Essa tríade reflete as preferências universais de consumo e a estratégia das plataformas em manter catálogos
+      versáteis para diferentes perfis de usuários.
+    </p>
+
+    <p>
+      A <strong>Disney+</strong>, contudo, apresenta um posicionamento de nicho bem definido: há uma predominância de filmes do gênero <strong>Família</strong> e
+      uma classificação indicativa significativamente mais baixa que a dos concorrentes. Isso confirma a estratégia da plataforma em ser o ambiente
+      principal para o público infanto-juvenil, contrastando com a maior oferta de conteúdos maduros na Netflix e no Prime Video.
+    </p>
+
+    <p>
+      Quanto à cronologia, observa-se que a grande maioria dos títulos foi lançada entre <strong>2010 e 2020</strong>. Esse pico de datas de
+      lançamento reflete o período de maior expansão da história da indústria audiovisual, impulsionado pela "guerra dos streamings"
+      e pelo investimento massivo em <strong>produções originais</strong>, que passaram a ser lançadas em um ritmo sem precedentes na última década.
+    </p>
+
+    <iframe width="100%" height="928" frameborder="0"
+      src="https://observablehq.com/embed/fae7590da1d7d835@947?cells=imagem_metricas"></iframe>
+  </div>
+
+  </div>
+  <div class="container-intro">
+      <h2> 4. Dashboard e Redes</h2>
+      
+      <p>
+        Para uma exploração interativa e aprofundada, este projeto divide-se em duas ferramentas complementares. 
+        No <strong>Dashboard</strong>, você encontrará visualizações geográficas (mapas de calor por plataforma e globais) que revelam a soberania de produção de cada país, além de gráficos de dispersão e barras que comparam o volume de dados e o comportamento das notas (IMDb vs. TMDB). A ferramenta também permite filtrar gêneros e analisar a evolução temporal dos lançamentos desde o século XX.
+      </p>
+
+      <p>
+        Já no <strong>Mapa de Redes</strong>, a análise foca na conectividade. É possível visualizar como títulos, gêneros e elencos se entrelaçam, identificando padrões de colaboração e clusters de nicho que definem a identidade de cada streaming.
+      </p>
+
+      <div class="botoes-navegacao">
+        <p>Acesse as visualizações completas:</p>
+        <a href="dashboard.html" class="botao-link">📊 Ir para o Dashboard Interativo</a>
+        <br><br>
+        <a href="mapa-redes.html" class="botao-link">🕸️ Ver Mapa de Redes e Conexões</a>
+      </div>
+    </div>
+</body>
+</html>
